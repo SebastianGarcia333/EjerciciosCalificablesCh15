@@ -18,14 +18,15 @@
 
 function diasDeInventario(stock, ventaDiaria) {
   // Tu código aquí
-  let dias = 0
-
-  while (stock != 0){
-    if (ventaDiaria <= 0){
-      return -1
+  let dias = 0;
+  if (ventaDiaria <= 0){
+    return -1;
+  } else {
+    while (stock > 0){
+      stock = stock - ventaDiaria;
+      dias += 1;
     }
-    stock -= ventaDiaria
-    dias += 1
+    return dias;
   }
 }
 
